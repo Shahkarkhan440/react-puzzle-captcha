@@ -1,0 +1,120 @@
+/* Container wrapping the entire captcha */
+.captcha-container {
+  position: relative;
+  /* margin: 0 auto; */
+  user-select: none;
+}
+
+body{
+  background-color: #54cbca !important;
+}
+h2{
+  font-family: "Outfit",sans-serif;
+}
+
+.card {
+  border: 1px solid #000 !important;
+}
+
+/* Overlay shown while image is loading */
+.captcha-loading-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  pointer-events: auto; /* block clicks/drags behind overlay */
+}
+
+/* Refresh icon in top-right corner */
+.captcha-refresh-icon {
+  position: absolute;
+    top: 1px;
+    right: 1px;
+    cursor: pointer;
+    padding: 6px;
+    background-color: #fff;
+}
+
+/* Slider container */
+.captcha-slider-container {
+  position: relative;
+  margin-top: 10px;
+  width: 100%; /* can be overridden by inline if needed */
+}
+
+/* Basic slider styling */
+.captcha-slider {
+  width: 100%;
+  -webkit-appearance: none;
+  appearance: none;
+  height: 44px;
+  background: #eaeaea;
+  border-radius: 22px;
+  outline: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Centered label over the slider track */
+.captcha-slider-label {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  color: #555;
+}
+
+
+ 
+
+/* Custom track & thumb for WebKit */
+input[type="range"]::-webkit-slider-runnable-track {
+  height: 44px;
+  background: #eaeaea;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 44px;
+  height: 44px;
+  background-size: 16px 16px;
+  border-radius: 0%;
+  box-shadow: 0 0 5px rgba(255, 255, 255, 1);
+  cursor: pointer;
+  margin-top: 0;  
+}
+
+/* Custom track & thumb for Firefox */
+input[type="range"]::-moz-range-track {
+  height: 44px;
+  background: #eaeaea;
+}
+input[type="range"]::-moz-range-thumb {
+  width: 44px;
+  height: 44px;
+  background-size: 16px 16px;
+  border-radius: 0%;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.989);
+  cursor: pointer;
+  border: none;
+}
+
+
+/* When solved, use a green background with the tick icon */
+/* .captcha-slider.is-solved::-webkit-slider-thumb {
+  background: green url("/public/successTick.svg") no-repeat center !important;
+  background-size: 16px 16px;
+}
+
+.captcha-slider.is-solved::-moz-range-thumb {
+  background: green url("/public/successTick.svg") no-repeat center !important;
+  background-size: 16px 16px;
+} */
